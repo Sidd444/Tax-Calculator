@@ -43,3 +43,9 @@ form {
   height: 50px;
   font-weight: bold;
 }
+#tooltip1{
+  position: absolute;
+  z-index: 3;
+  margin-left: 600px;
+  margin-top: -5%;
+}

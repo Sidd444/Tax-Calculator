@@ -15,12 +15,12 @@ submit.addEventListener("click", (event) => {
     let overallIncome=grossValue+extraValue-deductionsValue;
     let tax=0;
     if(overallIncome>800000){
-      let taxableAmount=overallIncome/100000-8;
-      if(ageValue==="<40") tax=0.3*taxableAmount;
+      let taxableAmount=parseInt(overallIncome/1000000)-8;
+      if(ageValue==="<40") tax=0.3*taxableAmount; 
       else if(ageValue===">=40 & <60") tax=0.4*taxableAmount;
       else if(ageValue===">=60") tax=0.1*taxableAmount;
     }
-    cal.innerText=overallIncome-tax;
+    cal.innerText=tax;
     result.style.display = "block";
   }
 });
@@ -28,3 +28,7 @@ submit.addEventListener("click", (event) => {
 close.addEventListener("click", () => {
   result.style.display = "none";
 });
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
